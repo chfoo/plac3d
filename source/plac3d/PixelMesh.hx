@@ -58,7 +58,7 @@ class PixelMesh {
             material.lightPicker = lightPicker;
             material.shadowMethod = new HardShadowMapMethod(shadowLight);
             material.shadowMethod.alpha = 0.5;
-            material.shadowMethod.epsilon = 0.3 ;
+            material.shadowMethod.epsilon = 0.25;
         }
     }
 

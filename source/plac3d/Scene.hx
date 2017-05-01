@@ -127,6 +127,7 @@ class Scene extends Sprite {
         view.camera.x = 0;
         view.camera.z = 0;
         currentPlayerHeight = view.camera.y = 1000;
+        view.camera.lens.far += 1000;
     }
 
     function enterFrameCallback(event:Event) {
