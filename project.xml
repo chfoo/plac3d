@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.0.0" />
+    <app main="plac3d.Main" file="Main" path="export" />
+
+    <window background="0x000000" orientation="landscape" />
+    <window width="1024" height="700" if="desktop" />
+    <window fps="60" />
+
+    <source path="source" />
+    <assets path="assets" />
+
+    <haxelib name="away3d" />
+    <haxelib name="actuate" />
+    <haxelib name="random" />
+
+</project>
