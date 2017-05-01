@@ -7,6 +7,7 @@ License: GPLv3
 package plac3d;
 
 
+import openfl.Lib;
 import js.Browser;
 import openfl.display.Sprite;
 import Random;
@@ -48,12 +49,14 @@ class Main extends Sprite {
 
         var aboutContainer = Browser.document.createDivElement();
         Browser.document.body.appendChild(aboutContainer);
+        var version = Lib.application.config.version;
 
-        aboutContainer.innerHTML = "
+        aboutContainer.innerHTML = '
             <div style=\"position:fixed;bottom:0px;right:0px;text-align:center;background:rgba(255,255,255,0.5);border-radius:0.1em;\">
+                Version $version.
                 Built with Away3D + OpenFL + Haxe. <a href=\"https://github.com/chfoo/plac3d\">More info.</a>
             </div>
-        ";
+        ';
         #end
     }
 }
