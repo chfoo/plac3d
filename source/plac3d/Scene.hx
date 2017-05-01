@@ -1,5 +1,6 @@
 package plac3d;
 
+import motion.easing.Quad;
 import plac3d.gfx.HelpOverlay;
 import plac3d.gfx.Screen;
 import plac3d.ui.TouchInput;
@@ -217,7 +218,7 @@ class Scene extends Sprite {
         }
 
         if (currentPlayerHeight != newCameraHeight && !cameraController.fly) {
-            Actuate.tween(view.camera, 1.0, {y: newCameraHeight});
+            Actuate.tween(view.camera, 1.0, {y: newCameraHeight}).ease(Quad.easeInOut);
             currentPlayerHeight = newCameraHeight;
         }
 
