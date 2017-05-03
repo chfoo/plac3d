@@ -1,21 +1,29 @@
 Plac3d
 ======
 
-Plac3d is a first-person 3D visualizer of r/place, Reddit's 2017 April
-Fool's day event. The visualizer places you onto the canvas which you can
-look and move around.
+First-person 3D visualizer of r/place.
+
+Plac3d puts you onto the final canvas of r/place, Reddit's 2017 April
+Fools' event, as a 3D visualization where you can look and walk around.
+
+With each pixel represented as a column of varying heights, you can explore
+the placement activity of the canvas. The taller the column, the more times
+a pixel has been placed there. It is logarithmically scaled for visual
+effect.
+
+
+Play
+====
 
 View Plac3d in your web browser at https://chfoo.github.io/plac3d/. You
 will need a fast computer or mobile device with a fast GPU to avoid slow
 performance.
 
+Desktop and mobile apps are not available yet.
+
 To look around, click to activate pointer lock or drag the scene. To walk,
 use the keyboard with the arrow or WASD keys. Touchscreen users can use 
 the on-screen virtual joystick to walk.
-
-The height of each pixel represents the amount of activity. The taller the
-pixel, the more times a pixel has been placed there. It is logarithmically
-scaled for visual effect.
 
 
 Build
