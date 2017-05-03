@@ -4,9 +4,8 @@
     <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.0.1" />
     <app main="plac3d.Main" file="Main" path="export" />
 
-    <window background="0x000000" orientation="landscape" />
+    <window background="0x000000" orientation="auto" fps="60" />
     <window width="1024" height="700" if="desktop" />
-    <window fps="60" />
 
     <source path="source" />
     <assets path="assets" />
