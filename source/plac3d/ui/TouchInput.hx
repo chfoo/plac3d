@@ -32,14 +32,17 @@ class TouchInput extends MouseInput {
     }
 
     function layoutVirtualJoystick() {
-        virtualJoystick.x = 0;
-        virtualJoystick.y = stage.stageHeight - virtualJoystick.diameter;
+        virtualJoystick.x = 4 * Screen.getPixelScale();
+        virtualJoystick.y = stage.stageHeight - virtualJoystick.diameter - 4 * Screen.getPixelScale();
     }
 
     override function mouseDownCallback(event:MouseEvent) {
         if (event.target == virtualJoystick) {
             startVirtualJoystickMove(event.stageX, event.stageY);
         } else {
+            if (isOutsideScreenSwipe(event.stageX, event.stageY)) {
+                return;
+            }
             super.mouseDownCallback(event);
         }
         trace("mouse down", event.target);
@@ -50,9 +53,18 @@ class TouchInput extends MouseInput {
             virtualJoystickTouchId = event.touchPointID;
             startVirtualJoystickMove(event.stageX, event.stageY);
         } else {
+            if (isOutsideScreenSwipe(event.stageX, event.stageY)) {
+                return;
+            }
             startMove(event.stageX, event.stageY);
         }
         trace("touch begin", event.target);
+    }
+
+    function isOutsideScreenSwipe(x:Float, y:Float) {
+        var threshold = 4 * Screen.getPixelScale();
+        return x < threshold || x > stage.width - threshold ||
+            y < threshold || y > stage.height - threshold;
     }
 
     function startVirtualJoystickMove(x:Float, y:Float) {
