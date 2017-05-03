@@ -1,7 +1,9 @@
 package plac3d.ui;
 
+#if html5
 import js.html.PointerEvent;
 import js.Browser;
+#end
 import openfl.events.MouseEvent;
 import openfl.display.Stage;
 
@@ -67,6 +69,7 @@ class MouseInput {
         }
     }
 
+    #if html5
     function pointerLockClickCallback(event:js.html.MouseEvent) {
         if (!pointerLocked) {
             var container = Browser.document.getElementById("openfl-content");
@@ -85,6 +88,7 @@ class MouseInput {
         var container = Browser.document.getElementById("openfl-content");
         pointerLocked = Browser.document.pointerLockElement == container;
     }
+    #end
 
     public function update() {
         xMovement = pendingXMovement;

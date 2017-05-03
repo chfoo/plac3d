@@ -1,6 +1,8 @@
 package plac3d.gfx;
 
+#if html5
 import js.Browser;
+#end
 import openfl.system.Capabilities;
 
 

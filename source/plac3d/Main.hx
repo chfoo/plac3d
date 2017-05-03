@@ -8,9 +8,11 @@ package plac3d;
 
 
 import openfl.Lib;
-import js.Browser;
 import openfl.display.Sprite;
 import Random;
+#if html5
+import js.Browser;
+#end
 
 
 class Main extends Sprite {

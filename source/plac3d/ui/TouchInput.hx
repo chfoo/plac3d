@@ -74,7 +74,7 @@ class TouchInput extends MouseInput {
 
     function touchEndCallback(event:TouchEvent) {
         if (event.touchPointID == virtualJoystickTouchId) {
-            virtualJoystickTouchId = null;
+            virtualJoystickTouchId = -1;
             stopVirtualJoystickMove();
         } else {
             stopMove();
