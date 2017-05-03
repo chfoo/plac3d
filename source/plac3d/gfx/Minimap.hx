@@ -42,18 +42,18 @@ class Minimap extends Sprite {
         compass.scaleX = compass.scaleY = scale;
 
         label = new TextField();
-        var textFormat = new TextFormat();
-        textFormat.size = Std.int(16 * scale);
+        var textFormat = new TextFormat("_sans", Std.int(14 * scale));
         label.setTextFormat(textFormat);
         label.backgroundColor = 0;
         label.textColor = 0xffffff;
         label.x = 16 * scale;
         label.y = bitmap.height;
         label.width = bitmap.width - 16 * scale;
+        label.height = 16 * scale;
 
         var background = new Shape();
         background.graphics.beginFill(0x000000);
-        background.graphics.drawRect(0, 0, bitmap.width, bitmap.height + textFormat.size);
+        background.graphics.drawRect(0, 0, bitmap.width, bitmap.height + label.height);
         background.graphics.endFill();
         background.alpha = 0.2;
 
