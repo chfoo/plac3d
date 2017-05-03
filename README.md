@@ -23,7 +23,8 @@ Desktop and mobile apps are not available yet.
 
 To look around, click to activate pointer lock or drag the scene. To walk,
 use the keyboard with the arrow or WASD keys. Touchscreen users can use 
-the on-screen virtual joystick to walk.
+the on-screen virtual joystick to walk. Click on the minimap to show FPS
+stats.
 
 
 Build

@@ -1,5 +1,6 @@
 package plac3d;
 
+import openfl.events.MouseEvent;
 import openfl.display.StageDisplayState;
 import motion.easing.Quad;
 import plac3d.gfx.HelpOverlay;
@@ -42,6 +43,7 @@ class Scene extends Sprite {
     var crosshair:Shape;
     var minimap:Minimap;
     var helpOverlay:HelpOverlay;
+    var stats:AwayStats;
 
     public function new(parent:Sprite) {
         super();
@@ -97,9 +99,13 @@ class Scene extends Sprite {
         helpOverlay.y = 0;
         helpOverlay.scaleX = helpOverlay.scaleY = scale;
 
-        var stats = new AwayStats(view);
+        minimap.addEventListener(MouseEvent.CLICK, function (event:MouseEvent) {
+            if (stats == null) {
+                stats = new AwayStats(view);
+                view.stage.addChild(stats);
+            }
+        });
 
-        view.stage.addChild(stats);
         view.stage.addChild(crosshair);
         view.stage.addChild(minimap);
         view.stage.addChild(helpOverlay);
