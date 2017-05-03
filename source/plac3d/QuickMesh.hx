@@ -8,8 +8,9 @@ import away3d.entities.Mesh;
 
 class QuickMesh extends Mesh {
     override function set_geometry(value:Geometry):Geometry {
-        // addEventListener is slow on html5 so comment it out since
-        // we aren't using the mesh in a scene :)
+        // addEventListener is slow (in most, if not all, targets)
+        // so comment it out since we aren't using the mesh in a scene :)
+        // Don't use this class for other purposes!
         var i:Int;
 
         if (_geometry != null) {

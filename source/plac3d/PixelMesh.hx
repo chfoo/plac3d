@@ -70,11 +70,10 @@ class PixelMesh {
     function newPixelMesh(x:Int, y:Int, colorIndex:Int, frequency:Int):Mesh {
         var height = getHeight(x, y);
         var material = materials[colorIndex];
-        #if html5
+
+        // FIXME: We should be building out the geometry ourselves instead
+        // of using a hacked class for meshes
         var cube = new QuickMesh(cubeGeometry, material);
-        #else
-        var cube = new Mesh(cubeGeometry, material);
-        #end
 
         // Cube's origin is in the center of the cube.
         // Move it so that the top-left of the cube is the origin.
