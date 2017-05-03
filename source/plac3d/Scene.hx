@@ -1,5 +1,6 @@
 package plac3d;
 
+import openfl.display.StageDisplayState;
 import motion.easing.Quad;
 import plac3d.gfx.HelpOverlay;
 import plac3d.gfx.Screen;
@@ -74,6 +75,10 @@ class Scene extends Sprite {
         initLights();
         initCurrentPixels();
         resizeViewToStage();
+
+        #if desktop
+        enterFullscreen();
+        #end
     }
 
     function initOverlay() {
@@ -140,6 +145,9 @@ class Scene extends Sprite {
         updateView();
 
         view.render();
+
+        keyInput.clear();
+        touchInput.clear();
     }
 
     function resizeCallback(event:Event) {
@@ -196,6 +204,8 @@ class Scene extends Sprite {
         cameraController.panAngle += touchInput.xMovement / 10;
         cameraController.tiltAngle += touchInput.yMovement / 10;
         minimap.setRotation(-cameraController.panAngle);
+
+        processFullscreen();
     }
 
     function updatePixels() {
@@ -223,5 +233,31 @@ class Scene extends Sprite {
         }
 
         minimap.setPosition(currentIndexX, currentIndexY);
+    }
+
+    function processFullscreen() {
+        if (keyInput.escapePressed) {
+            exitFullscreen();
+        }
+        if (keyInput.fullscreenPressed) {
+            toggleFullscreen();
+        }
+
+    }
+
+    function enterFullscreen() {
+        stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+    }
+
+    function exitFullscreen() {
+        stage.displayState = StageDisplayState.NORMAL;
+    }
+
+    function toggleFullscreen() {
+        if (stage.displayState != StageDisplayState.FULL_SCREEN_INTERACTIVE) {
+            stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+        } else {
+            stage.displayState = StageDisplayState.NORMAL;
+        }
     }
 }

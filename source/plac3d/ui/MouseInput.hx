@@ -96,4 +96,8 @@ class MouseInput {
         pendingXMovement = 0;
         pendingYMovement = 0;
     }
+
+    public function clear() {
+
+    }
 }

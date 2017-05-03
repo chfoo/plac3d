@@ -9,6 +9,10 @@ class KeyInput {
     public var down(default, null) = false;
     public var left(default, null) = false;
     public var right(default, null) = false;
+    public var escape(default, null) = false;
+    public var escapePressed(default, null) = false;
+    public var fullscreen(default, null) = false;
+    public var fullscreenPressed(default, null) = false;
 
     public function new(stage:Stage) {
         stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownCallback);
@@ -25,6 +29,16 @@ class KeyInput {
                 left = true;
             case Keyboard.RIGHT, Keyboard.D:
                 right = true;
+            case Keyboard.F11:
+                if (!fullscreen) {
+                    fullscreenPressed = true;
+                }
+                fullscreen = true;
+            case Keyboard.ESCAPE:
+                if (!escape) {
+                    escapePressed = true;
+                }
+                escape = true;
         }
     }
 
@@ -38,10 +52,19 @@ class KeyInput {
                 left = false;
             case Keyboard.RIGHT, Keyboard.D:
                 right = false;
+            case Keyboard.F11:
+                fullscreen = false;
+            case Keyboard.ESCAPE:
+                escape = false;
         }
     }
 
     public function update() {
 
+    }
+
+    public function clear() {
+        fullscreenPressed = false;
+        fullscreenPressed = false;
     }
 }
