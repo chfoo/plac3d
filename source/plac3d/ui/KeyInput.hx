@@ -64,7 +64,7 @@ class KeyInput {
     }
 
     public function clear() {
-        fullscreenPressed = false;
+        escapePressed = false;
         fullscreenPressed = false;
     }
 }

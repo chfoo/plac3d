@@ -237,27 +237,31 @@ class Scene extends Sprite {
 
     function processFullscreen() {
         if (keyInput.escapePressed) {
+            touchInput.exitPointerLock();
             exitFullscreen();
         }
         if (keyInput.fullscreenPressed) {
+            touchInput.exitPointerLock();
             toggleFullscreen();
         }
 
     }
 
     function enterFullscreen() {
+        trace("enter fullscreen");
         stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
     }
 
     function exitFullscreen() {
+        trace("exit fullscreen");
         stage.displayState = StageDisplayState.NORMAL;
     }
 
     function toggleFullscreen() {
         if (stage.displayState != StageDisplayState.FULL_SCREEN_INTERACTIVE) {
-            stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            enterFullscreen();
         } else {
-            stage.displayState = StageDisplayState.NORMAL;
+            exitFullscreen();
         }
     }
 }

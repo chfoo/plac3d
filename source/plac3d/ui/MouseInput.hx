@@ -1,12 +1,14 @@
 package plac3d.ui;
 
+import openfl.display.Window;
+import lime.ui.Mouse;
+import openfl.events.MouseEvent;
+import openfl.display.Stage;
+
 #if html5
 import js.html.PointerEvent;
 import js.Browser;
 #end
-import openfl.events.MouseEvent;
-import openfl.display.Stage;
-
 
 class MouseInput {
     public var xMovement(default, null) = 0.0;
@@ -40,6 +42,13 @@ class MouseInput {
 
     function mouseDownCallback(event:MouseEvent) {
         startMove(event.stageX, event.stageY);
+
+        #if desktop
+        // We are manually mouse locking because relative mouse events
+        // are not yet dispatched into the Flash framework
+        pointerLocked = true;
+        Mouse.hide();
+        #end
     }
 
     function startMove(x:Float, y:Float) {
@@ -61,9 +70,26 @@ class MouseInput {
     }
 
     function processMove(x:Float, y:Float) {
-        if (moving) {
-            pendingXMovement += movingOriginX - x;
-            pendingYMovement += movingOriginY - y;
+        if (moving || pointerLocked) {
+            if (pointerLocked) {
+                // Manual mosue locking
+                var centerX = Std.int(stage.window.width / 2);
+                var centerY = Std.int(stage.window.height / 2);
+
+                Mouse.warp(centerX, centerY, stage.window);
+
+                if (x != centerX) {
+                    pendingXMovement -= movingOriginX - x;
+                }
+                if (y != centerY) {
+                    pendingYMovement -= movingOriginY - y;
+                }
+
+            } else {
+                pendingXMovement += movingOriginX - x;
+                pendingYMovement += movingOriginY - y;
+            }
+
             movingOriginX = x;
             movingOriginY = y;
         }
@@ -99,5 +125,14 @@ class MouseInput {
 
     public function clear() {
 
+    }
+
+    public function exitPointerLock() {
+        Mouse.show();
+        pointerLocked = false;
+
+        #if html5
+        Browser.document.exitPointerLock();
+        #end
     }
 }
