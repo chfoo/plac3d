@@ -1,5 +1,12 @@
 package plac3d;
 
+import openfl.geom.Point;
+import openfl.geom.Rectangle;
+import flash.display.BitmapData;
+import openfl.Assets;
+import away3d.textures.BitmapCubeTexture;
+import away3d.primitives.SkyBox;
+import away3d.primitives.CubeGeometry;
 import openfl.events.MouseEvent;
 import openfl.display.StageDisplayState;
 import motion.easing.Quad;
@@ -44,6 +51,7 @@ class Scene extends Sprite {
     var minimap:Minimap;
     var helpOverlay:HelpOverlay;
     var stats:AwayStats;
+    var skyBox:SkyBox;
 
     public function new(parent:Sprite) {
         super();
@@ -76,6 +84,7 @@ class Scene extends Sprite {
         stage.scaleMode = StageScaleMode.NO_SCALE;
         stage.align = StageAlign.TOP_LEFT;
 
+        initEnvironment();
         initCamera();
         initLights();
         initCurrentPixels();
@@ -84,6 +93,25 @@ class Scene extends Sprite {
         #if desktop
         enterFullscreen();
         #end
+    }
+
+    function initEnvironment() {
+        var size = 64;
+        var envmap = Assets.getBitmapData("assets/skybox_envmap.png");
+        var top = new BitmapData(size, size);
+        var middle = new BitmapData(size, size);
+        var bottom = new BitmapData(size, size);
+
+        bottom.copyPixels(envmap, new Rectangle(0, size, size, size), new Point(0, 0));
+        top.copyPixels(envmap, new Rectangle(size, size, size, size), new Point(0, 0));
+        middle.copyPixels(envmap, new Rectangle(size * 2, size, size, size), new Point(0, 0));
+
+        var texture = new BitmapCubeTexture(
+            middle, middle, top, bottom, middle, middle
+        );
+        skyBox = new SkyBox(texture);
+
+        view.scene.addChild(skyBox);
     }
 
     function initOverlay() {

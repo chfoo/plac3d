@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+* Added: Blue skybox
+
+
 1.1 (2017-05-4)
 ---------------
 
