@@ -54,7 +54,7 @@ class Minimap extends Sprite {
         label.textColor = 0xffffff;
         label.x = 24 * scale;
         label.y = bitmap.height;
-        label.width = bitmap.width - 20 * scale;
+        label.width = bitmap.width - 26 * scale;
         label.height = 16 * scale;
 
         var background = new Shape();

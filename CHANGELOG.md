@@ -5,6 +5,7 @@ Unreleased
 ----------
 
 * Added: App icon
+* Fixed: minimap alignment
 
 
 1.2 (2017-05-4)
