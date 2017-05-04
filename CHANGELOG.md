@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+* Added: App icon
+
+
 1.2 (2017-05-4)
 ---------------
 

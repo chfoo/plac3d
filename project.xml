@@ -3,6 +3,9 @@
 
     <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2" />
     <app main="plac3d.Main" file="Main" path="export" />
+    <icon path="icon/icon.svg" size="512" />
+    <!-- Automatic svg export has inferior rendering -->
+    <!-- <icon path="icon/icon.svg" /> -->
 
     <window background="0x000000" orientation="auto" fps="60" />
     <window width="1024" height="700" if="desktop" />
