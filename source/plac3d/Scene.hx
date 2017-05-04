@@ -51,6 +51,9 @@ class Scene extends Sprite {
 
         view = new View3D();
         view.backgroundColor = 0xdddddd;
+        #if html5
+        view.depthPrepass = false;
+        #end
         addChild(view);
 
         keyInput = new KeyInput(stage);
