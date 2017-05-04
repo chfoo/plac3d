@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Unreleased
-----------
+1.1 (2017-05-4)
+---------------
 
 * Added: desktop fullscreen and mouse lock support
 * Added: Display player height as a gauge in minimap
