@@ -239,8 +239,10 @@ class Scene extends Sprite {
         if (currentPlayerHeight != newCameraHeight && !cameraController.fly) {
             Actuate.tween(view.camera, 1.0, {y: newCameraHeight}).ease(Quad.easeInOut);
             currentPlayerHeight = newCameraHeight;
+
         }
 
+        minimap.setHeight(view.camera.y / PixelMesh.CUBE_WIDTH / 20);
         minimap.setPosition(currentIndexX, currentIndexY);
     }
 

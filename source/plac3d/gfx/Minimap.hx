@@ -17,6 +17,7 @@ class Minimap extends Sprite {
     var currentX:Int;
     var currentY:Int;
     var minimapSize:Int;
+    var playerHeight:PlayerHeight;
 
     public function new(placements: Placements, minimapSize:Int = 80) {
         super();
@@ -41,14 +42,19 @@ class Minimap extends Sprite {
         compass.y = 8 * scale + bitmap.height;
         compass.scaleX = compass.scaleY = scale;
 
+        playerHeight = new PlayerHeight();
+        playerHeight.x = 18 * scale;
+        playerHeight.y = bitmap.height;
+        playerHeight.scaleX = playerHeight.scaleY = scale;
+
         label = new TextField();
         var textFormat = new TextFormat("_sans", Std.int(14 * scale));
         label.setTextFormat(textFormat);
         label.backgroundColor = 0;
         label.textColor = 0xffffff;
-        label.x = 16 * scale;
+        label.x = 24 * scale;
         label.y = bitmap.height;
-        label.width = bitmap.width - 16 * scale;
+        label.width = bitmap.width - 20 * scale;
         label.height = 16 * scale;
 
         var background = new Shape();
@@ -61,6 +67,7 @@ class Minimap extends Sprite {
         addChild(bitmap);
         addChild(playerHeading);
         addChild(compass);
+        addChild(playerHeight);
         addChild(label);
     }
 
@@ -78,6 +85,10 @@ class Minimap extends Sprite {
     public function setRotation(angle:Float) {
         compass.rotation = angle;
         playerHeading.rotation = -angle;
+    }
+
+    public function setHeight(height:Float) {
+        playerHeight.setPlayerHeight(height);
     }
 
     function drawPlacements() {
