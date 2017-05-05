@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+* Fixed: Controls image not fitting on small screens
+
+
 1.2.1 (2017-05-05)
 ------------------
 
