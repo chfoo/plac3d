@@ -2,7 +2,7 @@
 <project>
 
     <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2" />
-    <app main="plac3d.Main" file="Main" path="export" />
+    <app main="plac3d.Main" file="Plac3d" path="export" />
     <icon path="icon/icon.svg" size="512" />
     <!-- Automatic svg export has inferior rendering -->
     <!-- <icon path="icon/icon.svg" /> -->
@@ -17,4 +17,10 @@
     <haxelib name="actuate" />
     <haxelib name="random" />
 
+    <haxeflag name="--no-traces" unless="debug" />
+
+    <architecture name="ARMv7" if="android" />
+    <architecture name="ARMv6" if="android" />
+    <architecture name="ARMv5" if="android" />
+    <architecture name="X86" if="android" />
 </project>
