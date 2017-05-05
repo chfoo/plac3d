@@ -128,7 +128,7 @@ class Scene extends Sprite {
 
         helpOverlay = new HelpOverlay();
         helpOverlay.y = 0;
-        helpOverlay.scaleX = helpOverlay.scaleY = scale;
+        helpOverlay.scaleX = helpOverlay.scaleY = 0.5 * scale;
 
         minimap.addEventListener(MouseEvent.CLICK, function (event:MouseEvent) {
             if (stats == null) {

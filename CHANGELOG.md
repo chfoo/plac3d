@@ -5,6 +5,7 @@ Unreleased
 ----------
 
 * Added: App icon
+* Changed: Improved controls image for high DPI screens
 * Fixed: minimap alignment
 
 
