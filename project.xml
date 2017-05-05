@@ -23,4 +23,6 @@
     <architecture name="ARMv6" if="android" />
     <architecture name="ARMv5" if="android" />
     <architecture name="X86" if="android" />
+
+    <include path="secret.xml" />
 </project>
