@@ -241,8 +241,15 @@ class Scene extends Sprite {
             helpOverlay.visible = false;
         }
 
-        cameraController.panAngle += touchInput.xMovement / 10;
-        cameraController.tiltAngle += touchInput.yMovement / 10;
+        var scale = Screen.getPixelScale();
+        var mouseScale = 0.1;
+
+        if (scale >= 2) {
+            mouseScale /= Math.sqrt(scale - 1);
+        }
+
+        cameraController.panAngle += touchInput.xMovement * mouseScale;
+        cameraController.tiltAngle += touchInput.yMovement * mouseScale;
         minimap.setRotation(-cameraController.panAngle);
 
         processFullscreen();
