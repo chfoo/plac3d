@@ -1,22 +1,22 @@
 Changelog
 =========
 
-Unreleased
-----------
+1.2.1 (2017-05-05)
+------------------
 
 * Added: App icon
 * Changed: Improved controls image for high DPI screens
 * Fixed: minimap alignment
 
 
-1.2 (2017-05-4)
----------------
+1.2 (2017-05-04)
+----------------
 
 * Added: Blue skybox
 
 
-1.1 (2017-05-4)
----------------
+1.1 (2017-05-04)
+----------------
 
 * Added: desktop fullscreen and mouse lock support
 * Added: Display player height as a gauge in minimap
