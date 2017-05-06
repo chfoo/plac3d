@@ -1,8 +1,8 @@
 Changelog
 =========
 
-Unreleased
-----------
+1.2.2 (2017-05-06)
+------------------
 
 * Fixed: Too fast movement on high DPI screens
 * Fixed: Controls image not fitting on small screens
