@@ -19,7 +19,8 @@ View Plac3d in your web browser at https://chfoo.github.io/plac3d/. You
 will need a fast computer or mobile device with a fast GPU to avoid slow
 performance.
 
-Desktop and mobile apps are not available yet.
+Also available on [Android on Google Play](https://play.google.com/store/apps/details?id=io.github.chfoo.plac3d).
+Other platforms not yet available.
 
 To look around, click to activate pointer lock or drag the scene. To walk,
 use the keyboard with the arrow or WASD keys. Touchscreen users can use 
