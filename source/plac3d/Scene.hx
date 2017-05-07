@@ -52,6 +52,7 @@ class Scene extends Sprite {
     var helpOverlay:HelpOverlay;
     var stats:AwayStats;
     var skyBox:SkyBox;
+    var performance:Performance;
 
     public function new(parent:Sprite) {
         super();
@@ -63,6 +64,7 @@ class Scene extends Sprite {
         view.depthPrepass = false;
         #end
         addChild(view);
+        performance = new Performance(stage);
 
         keyInput = new KeyInput(stage);
         touchInput = new TouchInput(stage);
@@ -93,6 +95,8 @@ class Scene extends Sprite {
         #if desktop
         enterFullscreen();
         #end
+
+        performance.adaptiveFrameRate = true;
     }
 
     function initEnvironment() {
@@ -221,16 +225,18 @@ class Scene extends Sprite {
     }
 
     function updateInput() {
+        var timestepScale = performance.getTimestepScale();
+
         if (keyInput.up || touchInput.virtualJoystickY < -0.5) {
-            cameraController.incrementWalk(10);
+            cameraController.incrementWalk(10 * timestepScale);
         } else if (keyInput.down || touchInput.virtualJoystickY > 0.5) {
-            cameraController.incrementWalk(-10);
+            cameraController.incrementWalk(-10 * timestepScale);
         }
 
         if (keyInput.left || touchInput.virtualJoystickX < -0.5) {
-            cameraController.incrementStrafe(-10);
+            cameraController.incrementStrafe(-10 * timestepScale);
         } else if (keyInput.right || touchInput.virtualJoystickX > 0.5) {
-            cameraController.incrementStrafe(10);
+            cameraController.incrementStrafe(10 * timestepScale);
         }
 
         if (helpOverlay.visible && (keyInput.up || keyInput.down ||
