@@ -6,6 +6,7 @@ Unreleased
 
 * Changed: Frame rate automatically scales down to 30 FPS when device can't
 fully reach 60 FPS
+* Changed: Screen is no longer kept on when idle
 
 
 1.2.2 (2017-05-06)

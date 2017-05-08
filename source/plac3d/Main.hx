@@ -7,6 +7,7 @@ License: GPLv3
 package plac3d;
 
 
+import lime.system.System;
 import openfl.Lib;
 import openfl.display.Sprite;
 import Random;
@@ -18,6 +19,11 @@ import js.Browser;
 class Main extends Sprite {
     public function new() {
         super();
+
+        // Lime/OpenFL forces screen to stay on, but we'll restore the expected
+        // behavior of traditional apps
+        System.allowScreenTimeout = true;
+
         var scene = new Scene(this);
 
         scene.setPosition(
