@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
-    <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2.3b1" />
+    <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2.3" />
     <app main="plac3d.Main" file="Plac3d" path="export" />
     <icon path="icon/icon.svg" size="512" />
     <!-- Automatic svg export has inferior rendering -->

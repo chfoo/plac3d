@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+1.2.3 (2017-05-08)
 ------------------
 
 * Changed: Frame rate automatically scales down to 30 FPS when device can't
