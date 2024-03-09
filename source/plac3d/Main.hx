@@ -57,7 +57,8 @@ class Main extends Sprite {
 
         var aboutContainer = Browser.document.createDivElement();
         Browser.document.body.appendChild(aboutContainer);
-        var version = Lib.application.config.version;
+        //var version = Lib.application.config.version;
+        var version = "";
 
         aboutContainer.innerHTML = '
             <div style=\"position:fixed;bottom:0px;right:0px;text-align:center;background:rgba(255,255,255,0.5);border-radius:0.1em;\">

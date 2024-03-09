@@ -23,7 +23,7 @@ Also available on [Android on Google Play](https://play.google.com/store/apps/de
 Other platforms not yet available.
 
 To look around, click to activate pointer lock or drag the scene. To walk,
-use the keyboard with the arrow or WASD keys. Touchscreen users can use 
+use the keyboard with the arrow or WASD keys. Touchscreen users can use
 the on-screen virtual joystick to walk. Click on the minimap to show FPS
 stats.
 
@@ -35,14 +35,15 @@ To build Plac3d, you will need an environment for Haxe.
 
 Requirements:
 
-* Haxe 3.4.2
-* OpenFL 4.9.2
-* Away3D 5.0.2
-* Actuate 1.8.7
+* Haxe 4.2.5
+* hxcpp 4.2.1
+* OpenFL 9.3.2
+* Away3D 5.0.9
+* Actuate 1.9.0
 * Random 1.4.1
 
 1. Get Haxe from [here](http://haxe.org/download/). If not using the
-installer, unzip into a directory. Ensure the binary are in path and run 
+installer, unzip into a directory. Ensure the binary are in path and run
 `haxelib setup`.
 2. Install OpenFL
 
@@ -64,5 +65,5 @@ installer, unzip into a directory. Ensure the binary are in path and run
 Issues
 ======
 
-Bug reports or problems? Please file an issue on the GitHub issue 
+Bug reports or problems? Please file an issue on the GitHub issue
 tracker.

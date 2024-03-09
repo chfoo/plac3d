@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2.4 (2024-03-09)
+------------------
+
+* Support modern Android versions as required by Google Play policies
+
 1.2.3 (2017-05-08)
 ------------------
 
@@ -37,7 +42,7 @@ fully reach 60 FPS
 * Added: Display player height as a gauge in minimap
 * Changed: FPS hidden by default
 * Changed: Improved controls image
-* Fixed: Camera moving when using edge screen gestures 
+* Fixed: Camera moving when using edge screen gestures
 
 
 1.0.1 (2017-05-01)

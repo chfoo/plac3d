@@ -37,8 +37,8 @@ class QuickMesh extends Mesh {
 
         if (_material != null) {
             // reregister material in case geometry has a different animation
-            _material.removeOwner(this);
-            _material.addOwner(this);
+            // _material.removeOwner(this);
+            // _material.addOwner(this);
         }
 
         return value;

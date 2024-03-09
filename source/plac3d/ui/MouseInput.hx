@@ -1,7 +1,7 @@
 package plac3d.ui;
 
 import openfl.display.Window;
-import lime.ui.Mouse;
+import openfl.ui.Mouse;
 import openfl.events.MouseEvent;
 import openfl.display.Stage;
 
@@ -76,7 +76,7 @@ class MouseInput {
                 var centerX = Std.int(stage.window.width / 2);
                 var centerY = Std.int(stage.window.height / 2);
 
-                Mouse.warp(centerX, centerY, stage.window);
+                stage.window.warpMouse(centerX, centerY);
 
                 if (x != centerX) {
                     pendingXMovement -= movingOriginX - x;
