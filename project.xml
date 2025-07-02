@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
-    <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2.4.1" build-number="40" />
+    <meta title="Plac3d" package="io.github.chfoo.plac3d" version="1.2.4.2" build-number="41" />
     <app main="plac3d.Main" file="Plac3d" path="export" />
     <icon path="icon/icon.svg" size="512" />
     <!-- Automatic svg export has inferior rendering -->
@@ -19,7 +19,8 @@
 
     <haxeflag name="--no-traces" unless="tracing" />
 
-    <config:android target-sdk-version="34"/>
+    <config:android target-sdk-version="35"/>
+    <config:android gradle-version="8.14.2" gradle-plugin="8.10.0" />
 
     <!-- <architecture name="armv6" if="android" /> -->
     <architecture name="armv7" if="android" />
